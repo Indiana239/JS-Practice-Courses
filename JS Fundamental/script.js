@@ -97,36 +97,36 @@ const calcAge = function (birthYear) {
   return 2037 - birthYear;
 };
 
-const years = [1990, 1967, 2002, 2010, 2018];
+// const years = [1990, 1967, 2002, 2010, 2018];
 
-const age4 = calcAge(years[0]);
-const age5 = calcAge(years[years.length - 1]);
-console.log(age4, age5);
+// const age4 = calcAge(years[0]);
+// const age5 = calcAge(years[years.length - 1]);
+// console.log(age4, age5);
 
-const ages = [calcAge(years[0]), calcAge(years[years.length - 1])];
-console.log(ages);
+// const ages = [calcAge(years[0]), calcAge(years[years.length - 1])];
+// console.log(ages);
 
-// add elements to array
+// // add elements to array
 
-const friends = ["Michael", "Steven", "Peter"];
-const newLength = friends.push("Jay");
-console.log(newLength);
+// const friends = ["Michael", "Steven", "Peter"];
+// const newLength = friends.push("Jay");
+// console.log(newLength);
 
-friends.unshift("John");
-console.log(friends);
+// friends.unshift("John");
+// console.log(friends);
 
-// remove elements from array
+// // remove elements from array
 
-const popped = friends.pop(); //last element
-console.log(popped);
+// const popped = friends.pop(); //last element
+// console.log(popped);
 
-friends.shift(); //first element
-console.log(friends);
+// friends.shift(); //first element
+// console.log(friends);
 
-console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("Steven"));
 
-console.log(friends.includes("Steven")); //returns boolean if there is or isn't in the array
-console.log(friends.includes("Bob"));
+// console.log(friends.includes("Steven")); //returns boolean if there is or isn't in the array
+// console.log(friends.includes("Bob"));
 
 // OBJECT
 
@@ -221,3 +221,71 @@ const sentence = `${jonas.firstName} is a ${
 } old teacher, and he has ${jonas.getSummary()} driver's license`;
 
 console.log(sentence);
+
+// LOOP
+
+const jonasArray = [
+  "him",
+  "her",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(jonasArray[i]);
+
+  // types[i] = typeof jonasArray[i];
+
+  types.push(typeof jonasArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+// break and continue
+console.log("--ONLY STRINGS--");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray !== "string") continue;
+
+  console.log(jonasArray[i]), typeof jonasArray[i];
+}
+
+console.log("--BREAK WITH NUMBER--");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray === "number") break;
+
+  console.log(jonasArray[i]), typeof jonasArray[i];
+}
+
+const jonasArrays = [
+  "him",
+  "her",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+for (let i = jonasArrays.length - 1; i >= 0; i--) {
+  console.log(i, jonasArrays[i]);
+}
+
+// loop inside loop
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`--- starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+  }
+}
